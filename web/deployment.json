@@ -4,41 +4,14 @@
   "address": "0xC6a6c2982F23229488D590A87148840469687E79",
   "source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
   "deployment_tx": "0x4c2570f26e229a962fd8da92541ab86f7b4dfd9df445ef67b283b8c4de4de87f",
-  "deployment_status": {
-    "phase": "FINALIZED",
-    "state": "success",
-    "execution": "SUCCESS"
-  },
-  "studio_builtin_account": true,
-  "checked_at": "2026-11-14T13:53:24.569Z",
-  "example_cases": {
-    "exact": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b"
-  },
   "studio_account": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
-  "transactions": {
-    "studio-submit-exact": {
-      "hash": "0x09c6d7e269d12c642aa6570c5ee907abb6fc93eea49e2081834eb741fdde0885",
-      "phase": "FINALIZED",
-      "state": "success",
-      "execution": "SUCCESS",
-      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
-      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
-      "method": "submit",
-      "leader_only": false,
-      "initial_validators": 5,
-      "rotations": 0
-    },
-    "studio-review-exact": {
-      "hash": "0x4b9b906d496422c47e73bb0fa38ce4736a007beddd6c9d25003078e09db6b3f0",
-      "phase": "FINALIZED",
-      "state": "success",
-      "execution": "SUCCESS",
-      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
-      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
-      "method": "review",
-      "leader_only": false,
-      "initial_validators": 5,
-      "rotations": 0
-    }
-  }
+  "studio_url": "https://studio.genlayer.com/?import-contract=0xC6a6c2982F23229488D590A87148840469687E79",
+  "example_cases": {
+    "exact": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b",
+    "semantic": "511c92f324508bf654e61deb7b80426ba8500448c6966e8bddb4ef4326ee16a0",
+    "leakage": "1cc92247ab94b3ee7657df270078f446347e4d6ab383ba9808843e68c750c7ee",
+    "unrelated": "e14bd2a068922768b4a4b76e2f9af3f1f5c95754268c55dc068dd212a346f1e6",
+    "uncertain": "d29889da64fee57940f3793479213034bffce506bfabb118a8dbefc9a73b0d5a"
+  },
+  "website": "https://benchmarkfence.vercel.app/"
 }

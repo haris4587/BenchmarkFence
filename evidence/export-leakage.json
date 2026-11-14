@@ -1,0 +1,49 @@
+{
+  "format": "benchmarkfence/1",
+  "chain_id": 61999,
+  "contract": "0xC6a6c2982F23229488D590A87148840469687E79",
+  "contract_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "record": {
+    "attempts": 1,
+    "bundle": "{\"version\":\"benchmarkfence/1\",\"dataset\":\"Synthetic answer key disclosure\",\"benchmark\":\"Fence fictional code mini-benchmark\",\"source_claim\":\"Synthetic fictional answer key; no external facts required.\",\"samples\":[{\"id\":\"train-key\",\"text\":\"Released answer key for the fictional Fence evaluation item FC-204: the vault access phrase is SILVER-PINE-729. Use this exact phrase for FC-204.\"}],\"evaluations\":[{\"id\":\"FC-204\",\"question\":\"In the fictional Fence evaluation item FC-204, what is the vault access phrase?\",\"answer\":\"SILVER-PINE-729\"}]}",
+    "evidence_sha256": "02b8c69185c6771b5e2bfb580f6ab6e965c10b95dbbd0f0ed1ef1ec8fcd77d28",
+    "id": "1cc92247ab94b3ee7657df270078f446347e4d6ab383ba9808843e68c750c7ee",
+    "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+    "receipts": [
+      {
+        "body": {
+          "case_id": "1cc92247ab94b3ee7657df270078f446347e4d6ab383ba9808843e68c750c7ee",
+          "event": "EVIDENCE_LOCKED",
+          "evidence_sha256": "02b8c69185c6771b5e2bfb580f6ab6e965c10b95dbbd0f0ed1ef1ec8fcd77d28",
+          "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+          "policy": "benchmarkfence/1",
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0
+        },
+        "hash": "ad91b38347cef8897a9659aa0891502656104a9e78b7a4f56924152f8f21088e"
+      },
+      {
+        "body": {
+          "case_id": "1cc92247ab94b3ee7657df270078f446347e4d6ab383ba9808843e68c750c7ee",
+          "event": "REVIEW_COMPLETED",
+          "evidence_sha256": "02b8c69185c6771b5e2bfb580f6ab6e965c10b95dbbd0f0ed1ef1ec8fcd77d28",
+          "pairs": [
+            {
+              "evaluation_id": "FC-204",
+              "kind": "ANSWER_LEAKAGE",
+              "sample_id": "train-key"
+            }
+          ],
+          "policy": "benchmarkfence/1",
+          "previous_hash": "ad91b38347cef8897a9659aa0891502656104a9e78b7a4f56924152f8f21088e",
+          "scope": "Submitted disclosed samples only; provenance and timing unverified",
+          "semantic_pairs": 1,
+          "sequence": 1,
+          "uncertain_pairs": 0,
+          "verdict": "CONTAMINATION_DETECTED"
+        },
+        "hash": "16df248bf8204928d22732236372cd15ea47d94942b1809ba30331b59dacacbe"
+      }
+    ]
+  }
+}

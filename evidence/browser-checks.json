@@ -1,0 +1,27 @@
+{
+  "production_url": "https://benchmarkfence.vercel.app/",
+  "desktop_viewport": 1348,
+  "desktop_scroll_width": 1348,
+  "mobile_frame_width": 390,
+  "mobile_content_viewport": 373,
+  "mobile_scroll_width": 373,
+  "tablet_frame_width": 768,
+  "tablet_content_viewport": 751,
+  "tablet_scroll_width": 751,
+  "mobile_dialog_bounds": {
+    "left": 16,
+    "right": 357
+  },
+  "invalid_schema_rejected": true,
+  "publication_consent_required": true,
+  "studio_submission_and_review_call_binding_verified": true,
+  "production_receipt_download_verified_offline": true,
+  "application_console_errors": 0,
+  "browser_extension_metadata_errors_excluded": 8,
+  "live_metamask_extension_tested": false,
+  "all_live_signing": "Studio built-in account",
+  "screenshots": [
+    "docs/screenshots/desktop-semantic.jpg",
+    "docs/screenshots/mobile-receipt.jpg"
+  ]
+}

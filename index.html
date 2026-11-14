@@ -1,16 +1,363 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101817"><meta name="description" content="Evidence-bound benchmark contamination verification with GenLayer Intelligent Contracts."><title>BenchmarkFence — Evidence before confidence</title><link rel="icon" type="image/svg+xml" href="/fence.svg"></head>
-<body>
-<header><a class="brand" href="#"><span class="brand-icon">▥</span> BenchmarkFence<span class="beta">STUDIONET</span></a><nav aria-label="Main"><a href="#workspace">Workspace</a><a href="#receipts">Receipts</a><a href="https://github.com/haris4587/BenchmarkFence" target="_blank" rel="noopener">Source ↗</a></nav><button id="connect" class="connect">Connect account <span>↗</span></button></header>
-<main>
-<section class="hero"><div><div class="eyebrow"><span class="live-dot"></span> GENLAYER INTELLIGENT CONTRACT</div><h1>Evidence before<br><em>confidence.</em></h1><p>Did the benchmark make it into the training data?<br>Lock the samples. Inspect the overlap. Keep the proof.</p><a class="button primary" href="#workspace">Start a verification <span>↓</span></a><a class="quiet" id="hero-example" href="#receipts">Explore a live receipt ↗</a></div><div class="hero-art" aria-label="Evidence passes through deterministic and semantic verification"><div class="art-top"><span>CONTAMINATION CHECK</span><span class="live-dot"></span></div><div class="sample-line"><span class="mono">01</span><i></i><i></i><i></i><span class="pill">TRAIN</span></div><div class="sample-line"><span class="mono">02</span><i></i><i></i><i></i><span class="pill">EVAL</span></div><div class="fence-grid"><span></span><span></span><span></span><span></span><span></span><span></span><div class="fence-label">HASH-LOCKED EVIDENCE</div></div><div class="art-bottom"><span>Exact match <b> deterministic</b></span><span>Semantic overlap <b> validator consensus</b></span></div><div class="art-foot"><span class="check-icon">✓</span> Every finding leaves a trace.<span>SHA-256 ↗</span></div></div></section>
-<div class="scope-strip"><span class="scope-icon">ⓘ</span><p><strong>Disclosure has a boundary.</strong> Results cover only the samples you submit. They do not prove a model is contamination-free or audit undisclosed training data.</p><span>01 / SCOPE</span></div>
-<section class="workspace" id="workspace"><div class="section-title"><div><div class="eyebrow">THE VERIFICATION WORKSPACE</div><h2>From samples to a verifiable finding.</h2></div><span class="network" id="network">● Studionet · 61999</span></div>
-<div class="work-grid"><div class="panel input-panel"><div class="panel-title"><span class="step">01</span><h3>Lock your evidence</h3><span class="small">PUBLIC DATA ONLY</span></div><p class="muted">Submit a disclosed training excerpt and evaluation items. The exact UTF-8 bytes are committed on-chain.</p><div class="example-row"><label for="example">Try an example</label><select id="example"><option value="exact">Exact duplicate</option><option value="semantic">Paraphrased question</option><option value="leakage">Hidden answer key</option><option value="unrelated">Unrelated sample</option><option value="uncertain">Incomplete context</option></select><button id="load-example" class="text-button">Load ↗</button></div><label class="editor-label" for="bundle">Evidence bundle <span>JSON · 6 samples / 3 questions max</span></label><textarea id="bundle" spellcheck="false" aria-describedby="bundle-help"></textarea><div id="bundle-help" class="editor-foot"><span id="bundle-stats">Checking evidence…</span><label class="upload">Import JSON<input id="import-file" type="file" accept="application/json,.json"></label></div><div class="hash-box"><span>SHA-256 · EXACT SUBMITTED BYTES</span><code id="evidence-hash">—</code></div><label class="consent"><input type="checkbox" id="public-consent">I can publish these samples. Evidence and answers will be public on-chain.</label><button class="button primary wide" id="submit">Lock evidence on GenLayer <span>↗</span></button></div>
-<div class="right-column"><div class="panel"><div class="panel-title"><span class="step">02</span><h3>Run the review</h3></div><p class="muted">Exact question matches are checked in code. Independent validators assess paraphrase and answer leakage for every remaining pair.</p><label for="active-case">Case ID</label><input id="active-case" placeholder="Lock evidence or paste a 64-character case ID" maxlength="64"><button class="button dark wide" id="review">Request contract review <span>→</span></button><p class="footnote">Only the submitting account can review. Up to 3 attempts; retries require an INCONCLUSIVE finding.</p></div>
-<div class="panel tx-panel"><div class="panel-title"><span class="step">↗</span><h3>Transaction lifecycle</h3><span id="tx-badge" class="pill">READY</span></div><div class="timeline"><span data-phase="submitted">Submitted</span><span data-phase="consensus">Consensus</span><span data-phase="finalized">Finalized</span><span data-phase="verified">Execution</span></div><p id="status" role="status" aria-live="polite">Ready to verify. Connect an account when you want to write.</p><a id="tx-link" class="mono" hidden target="_blank" rel="noopener"></a><label for="tx-hash">Resume a transaction</label><div class="inline-form"><input id="tx-hash" placeholder="0x… transaction hash"><button id="track" class="secondary">Track</button></div><p class="footnote">Finalized alone does not mean successful execution. Unresolved transactions can be resumed without resubmitting.</p></div></div></div></section>
-<section id="receipts"><div class="section-title"><div><div class="eyebrow">AN APPEND-ONLY AUDIT TRAIL</div><h2>The result, with its evidence.</h2></div><button id="example-receipt" class="secondary">Load live example ↗</button></div><form id="lookup-form" class="lookup"><label class="sr-only" for="lookup-id">Receipt case ID</label><input id="lookup-id" placeholder="Paste a case ID to inspect finalized state" pattern="[0-9a-f]{64}" required><button class="button dark" type="submit">Inspect receipt →</button></form><div id="record" class="panel empty"><span class="empty-mark">▤</span><h3>Your evidence has a paper trail.</h3><p>Load a live example or inspect a case to see the verdict, linked pairs and independently checked receipt chain.</p></div><details class="method"><summary>How findings are made <span>+</span></summary><div class="method-grid"><p><strong>EXACT_DUPLICATE</strong><br>Question text occurs verbatim in a training sample after Unicode case folding and whitespace collapsing, with word boundaries.</p><p><strong>PARAPHRASE / ANSWER_LEAKAGE</strong><br>Validators independently classify the same locked pairs. They compare compact labels, never generated explanations.</p><p><strong>NO_OVERLAP_FOUND / INCONCLUSIVE</strong><br>No overlap means none found in this batch. Missing context or unusable model output remains uncertain. Consensus failure is a transaction failure, not a finding.</p></div></details></section>
-<section class="bottom-band"><div><div class="eyebrow">BUILT FOR RESEARCH ACCOUNTABILITY</div><h2>Small claims.<br>Inspectable proof.</h2></div><p>Use BenchmarkFence when sharing dataset disclosures, reviewing evaluation integrity, or preserving evidence for reproducible research.</p><a id="contract-link" href="https://studio.genlayer.com" target="_blank" rel="noopener">Inspect the contract ↗</a></section>
-</main><footer><span class="brand"><span class="brand-icon">▥</span> BenchmarkFence</span><span>Evidence-linked verification · Powered by GenLayer</span><a href="https://github.com/haris4587/BenchmarkFence#readme" target="_blank" rel="noopener">Documentation ↗</a></footer>
-<dialog id="account-dialog" aria-labelledby="account-title"><form method="dialog"><button class="close" aria-label="Close account dialog">×</button></form><div class="eyebrow">CHOOSE A SIGNER</div><h2 id="account-title">Connect to Studionet.</h2><p>Read receipts without an account. Use Studio for built-in account signing, or connect a browser wallet on chain 61999.</p><button id="wallet-connect" class="button dark wide">Connect browser wallet ↗</button><p class="muted">MetaMask and compatible EIP-1193 wallets. You approve each signature.</p><hr><label for="studio-address">Your built-in Studio address</label><input id="studio-address" placeholder="0x… public account address" maxlength="42"><button id="studio-connect" class="secondary wide">Use GenLayer Studio account</button><p class="footnote">Prepare calls here, sign in Studio with its built-in account, then track the transaction here. The dashboard never requests your private key. Studio remains responsible for signing.</p><button id="disconnect" class="text-button">Disconnect current account</button><p id="account-status" role="status"></p><a href="https://studio.genlayer.com" target="_blank" rel="noopener">Open GenLayer Studio ↗</a></dialog>
-<dialog id="studio-dialog" aria-labelledby="studio-title"><form method="dialog"><button class="close" aria-label="Close Studio call">×</button></form><div class="eyebrow">SIGN WITH YOUR STUDIO ACCOUNT</div><h2 id="studio-title">Prepared contract call</h2><p id="studio-instructions"></p><label for="studio-call">Exact method and arguments</label><textarea id="studio-call" readonly spellcheck="false"></textarea><button id="copy-studio-call" class="secondary wide">Copy call JSON</button><p class="footnote">Open the deployed contract in Studio, select Normal (Full Consensus), and paste each argument into its corresponding field. Keep bundle JSON on one line. After sending, copy the transaction hash below. A matching sender, contract, method and arguments are verified before success is shown.</p><a id="studio-open" href="https://studio.genlayer.com/run-debug" target="_blank" rel="noopener">Open GenLayer Studio ↗</a><label for="studio-tx">Signed transaction hash from Studio</label><input id="studio-tx" placeholder="0x…" maxlength="66"><button id="studio-track" class="button primary wide">Track this Studio transaction →</button><p id="studio-error" role="status"></p></dialog><script type="module" src="/web/main.js"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101817" />
+    <meta
+      name="description"
+      content="Evidence-bound benchmark contamination verification with GenLayer Intelligent Contracts."
+    />
+    <title>BenchmarkFence — Evidence before confidence</title>
+    <link rel="icon" type="image/svg+xml" href="/fence.svg" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#"
+        ><span class="brand-icon">▥</span> BenchmarkFence<span class="beta"
+          >STUDIONET</span
+        ></a
+      >
+      <nav aria-label="Main">
+        <a href="#workspace">Workspace</a><a href="#receipts">Receipts</a
+        ><a
+          href="https://github.com/haris4587/BenchmarkFence"
+          target="_blank"
+          rel="noopener"
+          >Source →</a
+        >
+      </nav>
+      <button id="connect" class="connect">
+        Connect account <span>→</span>
+      </button>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">
+            <span class="live-dot"></span> GENLAYER INTELLIGENT CONTRACT
+          </div>
+          <h1>Evidence before<br /><em>confidence.</em></h1>
+          <p>
+            Did the benchmark make it into the training data?<br />Lock the
+            samples. Inspect the overlap. Keep the proof.
+          </p>
+          <a class="button primary" href="#workspace"
+            >Start a verification <span>↓</span></a
+          ><a class="quiet" id="hero-example" href="#receipts"
+            >Explore a live receipt →</a
+          >
+        </div>
+        <div
+          class="hero-art"
+          aria-label="Evidence passes through deterministic and semantic verification"
+        >
+          <div class="art-top">
+            <span>CONTAMINATION CHECK</span><span class="live-dot"></span>
+          </div>
+          <div class="sample-line">
+            <span class="mono">01</span><i></i><i></i><i></i
+            ><span class="pill">TRAIN</span>
+          </div>
+          <div class="sample-line">
+            <span class="mono">02</span><i></i><i></i><i></i
+            ><span class="pill">EVAL</span>
+          </div>
+          <div class="fence-grid">
+            <span></span><span></span><span></span><span></span><span></span
+            ><span></span>
+            <div class="fence-label">HASH-LOCKED EVIDENCE</div>
+          </div>
+          <div class="art-bottom">
+            <span>Exact match <b> deterministic</b></span
+            ><span>Semantic overlap <b> validator consensus</b></span>
+          </div>
+          <div class="art-foot">
+            <span class="check-icon">✓</span> Every finding leaves a trace.<span
+              >SHA-256 →</span
+            >
+          </div>
+        </div>
+      </section>
+      <div class="scope-strip">
+        <span class="scope-icon">ⓘ</span>
+        <p>
+          <strong>Disclosure has a boundary.</strong> Results cover only the
+          samples you submit. They do not prove a model is contamination-free or
+          audit undisclosed training data.
+        </p>
+        <span>01 / SCOPE</span>
+      </div>
+      <section class="workspace" id="workspace">
+        <div class="section-title">
+          <div>
+            <div class="eyebrow">THE VERIFICATION WORKSPACE</div>
+            <h2>From samples to a verifiable finding.</h2>
+          </div>
+          <span class="network" id="network">● Studionet · 61999</span>
+        </div>
+        <div class="work-grid">
+          <div class="panel input-panel">
+            <div class="panel-title">
+              <span class="step">01</span>
+              <h3>Lock your evidence</h3>
+              <span class="small">PUBLIC DATA ONLY</span>
+            </div>
+            <p class="muted">
+              Submit a disclosed training excerpt and evaluation items. The
+              exact UTF-8 bytes are committed on-chain.
+            </p>
+            <div class="example-row">
+              <label for="example">Try an example</label
+              ><select id="example">
+                <option value="exact">Exact duplicate</option>
+                <option value="semantic">Paraphrased question</option>
+                <option value="leakage">Hidden answer key</option>
+                <option value="unrelated">Unrelated sample</option>
+                <option value="uncertain">Incomplete context</option></select
+              ><button id="load-example" class="text-button">Load →</button>
+            </div>
+            <label class="editor-label" for="bundle"
+              >Evidence bundle
+              <span>JSON · 6 samples / 3 questions max</span></label
+            ><textarea
+              id="bundle"
+              spellcheck="false"
+              aria-describedby="bundle-help"
+            ></textarea>
+            <div id="bundle-help" class="editor-foot">
+              <span id="bundle-stats">Checking evidence…</span
+              ><label class="upload"
+                >Import JSON<input
+                  id="import-file"
+                  type="file"
+                  accept="application/json,.json"
+              /></label>
+            </div>
+            <div class="hash-box">
+              <span>SHA-256 · EXACT SUBMITTED BYTES</span
+              ><code id="evidence-hash">—</code>
+            </div>
+            <label class="consent"
+              ><input type="checkbox" id="public-consent" />I can publish these
+              samples. Evidence and answers will be public on-chain.</label
+            ><button class="button primary wide" id="submit">
+              Lock evidence on GenLayer <span>→</span>
+            </button>
+          </div>
+          <div class="right-column">
+            <div class="panel">
+              <div class="panel-title">
+                <span class="step">02</span>
+                <h3>Run the review</h3>
+              </div>
+              <p class="muted">
+                Exact question matches are checked in code. Independent
+                validators assess paraphrase and answer leakage for every
+                remaining pair.
+              </p>
+              <label for="active-case">Case ID</label
+              ><input
+                id="active-case"
+                placeholder="Lock evidence or paste a 64-character case ID"
+                maxlength="64"
+              /><button class="button dark wide" id="review">
+                Request contract review <span>→</span>
+              </button>
+              <p class="footnote">
+                Only the submitting account can review. Up to 3 attempts;
+                retries require an INCONCLUSIVE finding.
+              </p>
+            </div>
+            <div class="panel tx-panel">
+              <div class="panel-title">
+                <span class="step">→</span>
+                <h3>Transaction lifecycle</h3>
+                <span id="tx-badge" class="pill">READY</span>
+              </div>
+              <div class="timeline">
+                <span data-phase="submitted">Submitted</span
+                ><span data-phase="consensus">Consensus</span
+                ><span data-phase="finalized">Finalized</span
+                ><span data-phase="verified">Execution</span>
+              </div>
+              <p id="status" role="status" aria-live="polite">
+                Ready to verify. Connect an account when you want to write.
+              </p>
+              <a
+                id="tx-link"
+                class="mono"
+                hidden
+                target="_blank"
+                rel="noopener"
+              ></a
+              ><label for="tx-hash">Resume a transaction</label>
+              <div class="inline-form">
+                <input id="tx-hash" placeholder="0x… transaction hash" /><button
+                  id="track"
+                  class="secondary"
+                >
+                  Track
+                </button>
+              </div>
+              <p class="footnote">
+                Finalized alone does not mean successful execution. Unresolved
+                transactions can be resumed without resubmitting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="receipts">
+        <div class="section-title">
+          <div>
+            <div class="eyebrow">AN APPEND-ONLY AUDIT TRAIL</div>
+            <h2>The result, with its evidence.</h2>
+          </div>
+          <button id="example-receipt" class="secondary">
+            Load live example →
+          </button>
+        </div>
+        <form id="lookup-form" class="lookup">
+          <label class="sr-only" for="lookup-id">Receipt case ID</label
+          ><input
+            id="lookup-id"
+            placeholder="Paste a case ID to inspect finalized state"
+            pattern="[0-9a-f]{64}"
+            required
+          /><button class="button dark" type="submit">Inspect receipt →</button>
+        </form>
+        <div id="record" class="panel empty">
+          <span class="empty-mark">▤</span>
+          <h3>Your evidence has a paper trail.</h3>
+          <p>
+            Load a live example or inspect a case to see the verdict, linked
+            pairs and independently checked receipt chain.
+          </p>
+        </div>
+        <details class="method">
+          <summary>How findings are made <span>+</span></summary>
+          <div class="method-grid">
+            <p>
+              <strong>EXACT_DUPLICATE</strong><br />Question text occurs
+              verbatim in a training sample after Unicode case folding and
+              whitespace collapsing, with word boundaries.
+            </p>
+            <p>
+              <strong>PARAPHRASE / ANSWER_LEAKAGE</strong><br />Validators
+              independently classify the same locked pairs. They compare compact
+              labels, never generated explanations.
+            </p>
+            <p>
+              <strong>NO_OVERLAP_FOUND / INCONCLUSIVE</strong><br />No overlap
+              means none found in this batch. Missing context or unusable model
+              output remains uncertain. Consensus failure is a transaction
+              failure, not a finding.
+            </p>
+          </div>
+        </details>
+      </section>
+      <section class="bottom-band">
+        <div>
+          <div class="eyebrow">BUILT FOR RESEARCH ACCOUNTABILITY</div>
+          <h2>Small claims.<br />Inspectable proof.</h2>
+        </div>
+        <p>
+          Use BenchmarkFence when sharing dataset disclosures, reviewing
+          evaluation integrity, or preserving evidence for reproducible
+          research.
+        </p>
+        <a
+          id="contract-link"
+          href="https://studio.genlayer.com"
+          target="_blank"
+          rel="noopener"
+          >Inspect the contract →</a
+        >
+      </section>
+    </main>
+    <footer>
+      <span class="brand"><span class="brand-icon">▥</span> BenchmarkFence</span
+      ><span>Evidence-linked verification · Powered by GenLayer</span
+      ><a
+        href="https://github.com/haris4587/BenchmarkFence#readme"
+        target="_blank"
+        rel="noopener"
+        >Documentation →</a
+      >
+    </footer>
+    <dialog id="account-dialog" aria-labelledby="account-title">
+      <form method="dialog">
+        <button class="close" aria-label="Close account dialog">×</button>
+      </form>
+      <div class="eyebrow">CHOOSE A SIGNER</div>
+      <h2 id="account-title">Connect to Studionet.</h2>
+      <p>
+        Read receipts without an account. Use Studio for built-in account
+        signing, or connect a browser wallet on chain 61999.
+      </p>
+      <button id="wallet-connect" class="button dark wide">
+        Connect browser wallet →
+      </button>
+      <p class="muted">
+        MetaMask and compatible EIP-1193 wallets. You approve each signature.
+      </p>
+      <hr />
+      <label for="studio-address">Your built-in Studio address</label
+      ><input
+        id="studio-address"
+        placeholder="0x… public account address"
+        maxlength="42"
+      /><button id="studio-connect" class="secondary wide">
+        Use GenLayer Studio account
+      </button>
+      <p class="footnote">
+        Prepare calls here, sign in Studio with its built-in account, then track
+        the transaction here. The dashboard never requests your private key.
+        Studio remains responsible for signing.
+      </p>
+      <button id="disconnect" class="text-button">
+        Disconnect current account
+      </button>
+      <p id="account-status" role="status"></p>
+      <a href="https://studio.genlayer.com" target="_blank" rel="noopener"
+        >Open GenLayer Studio →</a
+      >
+    </dialog>
+    <dialog id="studio-dialog" aria-labelledby="studio-title">
+      <form method="dialog">
+        <button class="close" aria-label="Close Studio call">×</button>
+      </form>
+      <div class="eyebrow">SIGN WITH YOUR STUDIO ACCOUNT</div>
+      <h2 id="studio-title">Prepared contract call</h2>
+      <p id="studio-instructions"></p>
+      <label for="studio-call">Exact method and arguments</label
+      ><textarea id="studio-call" readonly spellcheck="false"></textarea
+      ><button id="copy-studio-call" class="secondary wide">
+        Copy call JSON
+      </button>
+      <p class="footnote">
+        Open the deployed contract in Studio, select Normal (Full Consensus),
+        and paste each argument into its corresponding field. Keep bundle JSON
+        on one line. After sending, copy the transaction hash below. A matching
+        sender, contract, method and arguments are verified before success is
+        shown.
+      </p>
+      <a
+        id="studio-open"
+        href="https://studio.genlayer.com/run-debug"
+        target="_blank"
+        rel="noopener"
+        >Open GenLayer Studio →</a
+      ><label for="studio-tx">Signed transaction hash from Studio</label
+      ><input id="studio-tx" placeholder="0x…" maxlength="66" /><button
+        id="studio-track"
+        class="button primary wide"
+      >
+        Track this Studio transaction →
+      </button>
+      <p id="studio-error" role="status"></p>
+    </dialog>
+    <script type="module" src="/web/main.js"></script>
+  </body>
+</html>

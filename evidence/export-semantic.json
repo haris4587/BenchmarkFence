@@ -1,0 +1,49 @@
+{
+  "format": "benchmarkfence/1",
+  "chain_id": 61999,
+  "contract": "0xC6a6c2982F23229488D590A87148840469687E79",
+  "contract_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "record": {
+    "attempts": 1,
+    "bundle": "{\"version\":\"benchmarkfence/1\",\"dataset\":\"Synthetic paraphrased worksheet\",\"benchmark\":\"Fence arithmetic mini-benchmark\",\"source_claim\":\"Synthetic paraphrase fixture for live validator review.\",\"samples\":[{\"id\":\"train-para\",\"text\":\"Inside a box are seven blue marbles together with twelve red ones. Work out the total number of marbles. The solution is nineteen.\"}],\"evaluations\":[{\"id\":\"eval-001\",\"question\":\"A box contains 12 red marbles and 7 blue marbles. How many marbles are in the box?\",\"answer\":\"19\"}]}",
+    "evidence_sha256": "3142be2bc838f1f9e0f086b7662b2957c3b09437d3edda88de2653c1a34113a3",
+    "id": "511c92f324508bf654e61deb7b80426ba8500448c6966e8bddb4ef4326ee16a0",
+    "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+    "receipts": [
+      {
+        "body": {
+          "case_id": "511c92f324508bf654e61deb7b80426ba8500448c6966e8bddb4ef4326ee16a0",
+          "event": "EVIDENCE_LOCKED",
+          "evidence_sha256": "3142be2bc838f1f9e0f086b7662b2957c3b09437d3edda88de2653c1a34113a3",
+          "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+          "policy": "benchmarkfence/1",
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0
+        },
+        "hash": "96c261c650be7330474802247c11237945fe625dbae8db6fe4b08494b56ff464"
+      },
+      {
+        "body": {
+          "case_id": "511c92f324508bf654e61deb7b80426ba8500448c6966e8bddb4ef4326ee16a0",
+          "event": "REVIEW_COMPLETED",
+          "evidence_sha256": "3142be2bc838f1f9e0f086b7662b2957c3b09437d3edda88de2653c1a34113a3",
+          "pairs": [
+            {
+              "evaluation_id": "eval-001",
+              "kind": "PARAPHRASE",
+              "sample_id": "train-para"
+            }
+          ],
+          "policy": "benchmarkfence/1",
+          "previous_hash": "96c261c650be7330474802247c11237945fe625dbae8db6fe4b08494b56ff464",
+          "scope": "Submitted disclosed samples only; provenance and timing unverified",
+          "semantic_pairs": 1,
+          "sequence": 1,
+          "uncertain_pairs": 0,
+          "verdict": "CONTAMINATION_DETECTED"
+        },
+        "hash": "81c5fed20e0b8f38229796953789adf1f8ab8f0637f69d3829af0a5409f4e2f7"
+      }
+    ]
+  }
+}

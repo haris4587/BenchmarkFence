@@ -1,0 +1,49 @@
+{
+  "format": "benchmarkfence/1",
+  "chain_id": 61999,
+  "contract": "0xC6a6c2982F23229488D590A87148840469687E79",
+  "contract_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "record": {
+    "attempts": 1,
+    "bundle": "{\"version\":\"benchmarkfence/1\",\"dataset\":\"Synthetic unrelated training text\",\"benchmark\":\"Fence arithmetic mini-benchmark\",\"source_claim\":\"Synthetic unrelated fixture. Limited to the submitted pair.\",\"samples\":[{\"id\":\"train-other\",\"text\":\"A gardener plants lavender beside a stone path and waters the flowers before sunrise.\"}],\"evaluations\":[{\"id\":\"eval-001\",\"question\":\"A box contains 12 red marbles and 7 blue marbles. How many marbles are in the box?\",\"answer\":\"19\"}]}",
+    "evidence_sha256": "5a705826c48c4642b330fdbaa9a26d195551ba52f1258071b53890205d139e2b",
+    "id": "e14bd2a068922768b4a4b76e2f9af3f1f5c95754268c55dc068dd212a346f1e6",
+    "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+    "receipts": [
+      {
+        "body": {
+          "case_id": "e14bd2a068922768b4a4b76e2f9af3f1f5c95754268c55dc068dd212a346f1e6",
+          "event": "EVIDENCE_LOCKED",
+          "evidence_sha256": "5a705826c48c4642b330fdbaa9a26d195551ba52f1258071b53890205d139e2b",
+          "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+          "policy": "benchmarkfence/1",
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0
+        },
+        "hash": "790f351f7351798fb1d026905999f4e1f4ced1f13fbbcb60c031cfa740c52db4"
+      },
+      {
+        "body": {
+          "case_id": "e14bd2a068922768b4a4b76e2f9af3f1f5c95754268c55dc068dd212a346f1e6",
+          "event": "REVIEW_COMPLETED",
+          "evidence_sha256": "5a705826c48c4642b330fdbaa9a26d195551ba52f1258071b53890205d139e2b",
+          "pairs": [
+            {
+              "evaluation_id": "eval-001",
+              "kind": "NO_OVERLAP",
+              "sample_id": "train-other"
+            }
+          ],
+          "policy": "benchmarkfence/1",
+          "previous_hash": "790f351f7351798fb1d026905999f4e1f4ced1f13fbbcb60c031cfa740c52db4",
+          "scope": "Submitted disclosed samples only; provenance and timing unverified",
+          "semantic_pairs": 1,
+          "sequence": 1,
+          "uncertain_pairs": 0,
+          "verdict": "NO_OVERLAP_FOUND"
+        },
+        "hash": "e65c23f6a62a37daaf8c31848aa7b4af2760e803e03525e5dea9a8a21e3833b6"
+      }
+    ]
+  }
+}

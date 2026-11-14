@@ -1,0 +1,49 @@
+{
+  "format": "benchmarkfence/1",
+  "chain_id": 61999,
+  "contract": "0xC6a6c2982F23229488D590A87148840469687E79",
+  "contract_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "record": {
+    "attempts": 1,
+    "bundle": "{\"version\":\"benchmarkfence/1\",\"dataset\":\"Synthetic incomplete excerpt\",\"benchmark\":\"Fence reference mini-benchmark\",\"source_claim\":\"Synthetic ambiguity fixture; intentionally omits the referenced document.\",\"samples\":[{\"id\":\"train-gap\",\"text\":\"The answer to the question on the missing previous page is the value marked in the red circle. That page and the circle are not included in this excerpt.\"}],\"evaluations\":[{\"id\":\"eval-gap\",\"question\":\"What answer is marked in the red circle on the missing previous page?\",\"answer\":\"42\"}]}",
+    "evidence_sha256": "c1c255c16c1d4d89ec442056a7489267ade7cc23fefca56b3f017daa02c74181",
+    "id": "d29889da64fee57940f3793479213034bffce506bfabb118a8dbefc9a73b0d5a",
+    "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+    "receipts": [
+      {
+        "body": {
+          "case_id": "d29889da64fee57940f3793479213034bffce506bfabb118a8dbefc9a73b0d5a",
+          "event": "EVIDENCE_LOCKED",
+          "evidence_sha256": "c1c255c16c1d4d89ec442056a7489267ade7cc23fefca56b3f017daa02c74181",
+          "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+          "policy": "benchmarkfence/1",
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0
+        },
+        "hash": "36cdd465706f80c3bf3cea25d9eeb0d1f886532faa6228704faa845e5249c8cd"
+      },
+      {
+        "body": {
+          "case_id": "d29889da64fee57940f3793479213034bffce506bfabb118a8dbefc9a73b0d5a",
+          "event": "REVIEW_COMPLETED",
+          "evidence_sha256": "c1c255c16c1d4d89ec442056a7489267ade7cc23fefca56b3f017daa02c74181",
+          "pairs": [
+            {
+              "evaluation_id": "eval-gap",
+              "kind": "UNCERTAIN",
+              "sample_id": "train-gap"
+            }
+          ],
+          "policy": "benchmarkfence/1",
+          "previous_hash": "36cdd465706f80c3bf3cea25d9eeb0d1f886532faa6228704faa845e5249c8cd",
+          "scope": "Submitted disclosed samples only; provenance and timing unverified",
+          "semantic_pairs": 1,
+          "sequence": 1,
+          "uncertain_pairs": 1,
+          "verdict": "INCONCLUSIVE"
+        },
+        "hash": "49cb4b9a1432868e132fa40049afa658e280575e375a5aa01e1c558fa3032abe"
+      }
+    ]
+  }
+}

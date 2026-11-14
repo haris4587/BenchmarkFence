@@ -8,52 +8,58 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 > benchmarkfence@1.0.0 test
 > node --test tests/*.test.js
 
-✔ valid example: exact (4.220544ms)
-✔ valid example: semantic (0.576989ms)
-✔ valid example: leakage (0.564195ms)
-✔ valid example: unrelated (0.452306ms)
-✔ valid example: uncertain (0.420166ms)
-✔ UTF-8 bytes are hashed exactly (21.187047ms)
-✔ JSON whitespace changes evidence hash (6.263063ms)
-✔ canonical JSON matches Python ensure_ascii (0.722181ms)
-✔ bounds reject oversize UTF8 (1.048341ms)
-✔ reject unknown schema (0.614058ms)
-✔ reject duplicate item IDs (0.308597ms)
-✔ question length bound (0.380111ms)
-✔ PENDING remains pending (0.316893ms)
-✔ PROPOSING remains pending (0.081733ms)
-✔ COMMITTING remains pending (0.068267ms)
-✔ REVEALING remains pending (0.062578ms)
-✔ ACCEPTED remains pending (0.059361ms)
-✔ CANCELED does not become success (0.157485ms)
-✔ UNDETERMINED does not become success (0.070833ms)
-✔ REJECTED does not become success (0.061214ms)
-✔ FINALIZED without execution is unverified (0.135553ms)
-✔ FINALIZED execution error is failure (0.124863ms)
-✔ FINALIZED returned execution is success (0.175197ms)
-✔ consensus disagreement is failure (0.231883ms)
-✔ discard canceled leaders after quorum (0.317363ms)
-✔ conflicting executions remain unverified (0.153898ms)
-✔ select final leader receipt (0.156353ms)
-✔ valid receipt chain (8.873977ms)
-✔ edited evidence rejected (3.323286ms)
-✔ tampered receipt rejected (1.936051ms)
-✔ rebound owner rejected (4.813452ms)
-✔ truncated chain rejected (2.93524ms)
-✔ wallet switches and requests authorized account (2.181811ms)
-✔ wallet adds missing chain (0.53971ms)
-✔ rejected signature does not silently fall back (0.307906ms)
-✔ wrong network fails closed (0.234048ms)
-✔ missing wallet guidance (0.276417ms)
-✔ no signing object is exported to window (0.674151ms)
-ℹ tests 38
+✔ valid example: exact (3.107573ms)
+✔ valid example: semantic (0.313387ms)
+✔ valid example: leakage (0.551161ms)
+✔ valid example: unrelated (0.285443ms)
+✔ valid example: uncertain (0.296905ms)
+✔ UTF-8 bytes are hashed exactly (16.821326ms)
+✔ JSON whitespace changes evidence hash (5.271581ms)
+✔ canonical JSON matches Python ensure_ascii (0.509202ms)
+✔ bounds reject oversize UTF8 (0.806217ms)
+✔ reject unknown schema (0.509212ms)
+✔ reject duplicate item IDs (0.377346ms)
+✔ question length bound (0.424554ms)
+✔ PENDING remains pending (0.413544ms)
+✔ PROPOSING remains pending (0.072335ms)
+✔ COMMITTING remains pending (0.06403ms)
+✔ REVEALING remains pending (0.211486ms)
+✔ ACCEPTED remains pending (0.065453ms)
+✔ CANCELED does not become success (0.094677ms)
+✔ UNDETERMINED does not become success (0.119123ms)
+✔ REJECTED does not become success (0.111489ms)
+✔ FINALIZED without execution is unverified (0.201197ms)
+✔ FINALIZED execution error is failure (0.60927ms)
+✔ FINALIZED returned execution is success (0.270055ms)
+✔ consensus disagreement is failure (0.191118ms)
+✔ discard canceled leaders after quorum (2.108777ms)
+✔ conflicting executions remain unverified (0.172993ms)
+✔ select final leader receipt (0.237575ms)
+✔ valid receipt chain (11.28927ms)
+✔ edited evidence rejected (1.193874ms)
+✔ tampered receipt rejected (2.477632ms)
+✔ rebound owner rejected (2.443341ms)
+✔ truncated chain rejected (1.677438ms)
+✔ wallet switches and requests authorized account (2.230823ms)
+✔ wallet adds missing chain (2.628186ms)
+✔ rejected signature does not silently fall back (0.199082ms)
+✔ wrong network fails closed (0.89833ms)
+✔ missing wallet guidance (0.458268ms)
+✔ no signing object is exported to window (13.86507ms)
+✔ verify signed Studio call sender, destination and args (3.407784ms)
+✔ reject wrong sender (0.920051ms)
+✔ reject wrong contract (0.615641ms)
+✔ reject wrong method (0.626001ms)
+✔ reject wrong case argument (0.702875ms)
+✔ missing calldata remains unverified (0.447517ms)
+ℹ tests 44
 ℹ suites 0
-ℹ pass 38
+ℹ pass 44
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 328.969772
+ℹ duration_ms 616.345815
 npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
 
 > benchmarkfence@1.0.0 test:contract
@@ -74,13 +80,13 @@ transforming...
 ✓ 464 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                  10.40 kB │ gzip:   3.90 kB
-dist/assets/index-DbUJLTSB.css   13.52 kB │ gzip:   3.88 kB
-dist/assets/ccip-DaLd-ZRj.js      4.40 kB │ gzip:   1.97 kB
-dist/assets/index-UBhP0d-f.js   560.59 kB │ gzip: 125.90 kB
+dist/index.html                  14.38 kB │ gzip:   4.40 kB
+dist/assets/index-CtNFNSQi.css   13.52 kB │ gzip:   3.88 kB
+dist/assets/ccip-CMIN5N06.js      4.40 kB │ gzip:   1.97 kB
+dist/assets/index-CK7hHKWF.js   560.99 kB │ gzip: 126.17 kB
 
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 3.51s
+✓ built in 3.55s

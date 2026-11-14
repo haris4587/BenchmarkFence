@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>BenchmarkFence responsive verification</title
+  ><style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font: 14px system-ui;
+      background: #e8eddf;
+      color: #20301f;
+      margin: 0;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    p {
+      font-size: 12px;
+      color: #68785b;
+    }
+    button {
+      border: 1px solid #abbda0;
+      border-radius: 5px;
+      padding: 8px 12px;
+      background: #fff;
+      color: #3a5230;
+      cursor: pointer;
+    }
+    iframe {
+      display: block;
+      border: 1px solid #a5b49a;
+      border-radius: 12px;
+      background: #f7f8f4;
+      box-shadow: 0 8px 30px #17241522;
+      margin: auto;
+      max-width: 100%;
+      height: 800px;
+    }
+    #label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+    button[aria-pressed="true"] {
+      background: #c6f279;
+    }
+  </style>
+  <header>
+    <h1>BenchmarkFence</h1>
+    <span>Responsive verification</span
+    ><button id="mobile" aria-pressed="true">390 px</button
+    ><button id="tablet" aria-pressed="false">768 px</button>
+  </header>
+  <p>
+    This frame renders the actual application at a fixed viewport width. It uses
+    the live contract; no mock results are inserted.
+  </p>
+  <p id="label">MOBILE · 390 PX</p>
+  <iframe
+    title="Live BenchmarkFence responsive viewport"
+    width="390"
+    src="/?case=511c92f324508bf654e61deb7b80426ba8500448c6966e8bddb4ef4326ee16a0#receipts"
+  ></iframe>
+  <script>
+    const f = document.querySelector("iframe");
+    for (const [id, w] of [
+      ["mobile", 390],
+      ["tablet", 768],
+    ])
+      document.getElementById(id).onclick = () => {
+        f.width = w;
+        document.getElementById("label").textContent =
+          (w === 390 ? "MOBILE" : "TABLET") + " · " + w + " PX";
+        for (const el of document.querySelectorAll("button"))
+          el.setAttribute("aria-pressed", String(el.id === id));
+      };
+  </script>
+</html>

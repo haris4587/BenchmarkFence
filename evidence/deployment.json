@@ -10,9 +10,13 @@
     "execution": "SUCCESS"
   },
   "studio_builtin_account": true,
-  "checked_at": "2026-11-14T13:53:24.569Z",
+  "checked_at": "2026-11-14T14:06:21.556Z",
   "example_cases": {
-    "exact": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b"
+    "exact": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b",
+    "semantic": "511c92f324508bf654e61deb7b80426ba8500448c6966e8bddb4ef4326ee16a0",
+    "leakage": "1cc92247ab94b3ee7657df270078f446347e4d6ab383ba9808843e68c750c7ee",
+    "unrelated": "e14bd2a068922768b4a4b76e2f9af3f1f5c95754268c55dc068dd212a346f1e6",
+    "uncertain": "d29889da64fee57940f3793479213034bffce506bfabb118a8dbefc9a73b0d5a"
   },
   "studio_account": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
   "transactions": {
@@ -39,6 +43,105 @@
       "leader_only": false,
       "initial_validators": 5,
       "rotations": 0
+    },
+    "studio-submit-semantic": {
+      "hash": "0x51c26868203f4c64444314ba361110fdf827b199e1951eec2004680e5cb19fe9",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "submit",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-review-semantic": {
+      "hash": "0xe70b1ea5cc7b9397bd7cb01acb2792bc5909c0c84df99bd01ec9aa209fe8c084",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "review",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-submit-leakage": {
+      "hash": "0x95e25bad1089543ea4a44087b34ba3317e032c1f4eafc6b1d91978ad54d3ddcd",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "submit",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-review-leakage": {
+      "hash": "0x7e92c38f186a805140a1660f402ce208915a92e3c29e7557fb6262f4058378ed",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "review",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-submit-unrelated": {
+      "hash": "0x0cfe46c81170fa487d9ee59e5f68460dc306246538a2ed2da8d267ae8802cd1d",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "submit",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-review-unrelated": {
+      "hash": "0xa99035ac01626777b36ec74c7493e3dbd9f9d982c04c9e7fbd905453941a2839",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "review",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-submit-uncertain": {
+      "hash": "0x5a74df350928cd38b166fa56220946ad5bdd24034a9ac63ded387dd814a09c9b",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "submit",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-review-uncertain": {
+      "hash": "0x2f9433eb7b2b2dd8f31e421d2c8d51fbeb17c803bb7db631c8194eebb5bc3642",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "review",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
     }
-  }
+  },
+  "onchain_source_verified": true,
+  "website": "https://benchmarkfence.vercel.app/",
+  "studio_url": "https://studio.genlayer.com/?import-contract=0xC6a6c2982F23229488D590A87148840469687E79"
 }

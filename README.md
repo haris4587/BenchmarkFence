@@ -2,6 +2,11 @@
 
 **Evidence before confidence.** A working GenLayer dapp that checks disclosed training samples against evaluation items, records evidence-linked contamination findings, and preserves append-only hash-linked receipts.
 
+**Live:** https://benchmarkfence.vercel.app/
+**Contract:** [Studionet explorer](https://explorer-studio.genlayer.com/address/0xC6a6c2982F23229488D590A87148840469687E79)
+**Reproduce:** [Import the deployed contract into Studio](https://studio.genlayer.com/?import-contract=0xC6a6c2982F23229488D590A87148840469687E79)
+**Validation:** 35 Python + 44 JavaScript tests, GitHub CI, and five live full-consensus review outcomes.
+
 ## The trust problem
 
 A model's evaluation score can overstate generalization when benchmark questions or answer keys appear in training data. A researcher making a disclosure needs an inspectable record of **what was compared, what was found, and how that finding was reached**. A chat response alone cannot lock evidence, independently validate an assessment, or maintain an immutable audit history.
@@ -31,7 +36,7 @@ BenchmarkFence commits the exact submitted UTF-8 bytes, detects normalized exact
 
 ### Accounts
 
-- The deployment is performed with **GenLayer Studio's built-in account**, in full-consensus mode. Open `contracts/benchmark_fence.py` in [Studio](https://studio.genlayer.com), deploy it, and call `submit` / `review` to reproduce that workflow.
+- The deployment is performed with **GenLayer Studio's built-in account**, in full-consensus mode. Use the import link above to load the deployed contract, choose Run and Debug, and call `submit` / `review` in Normal (Full Consensus) mode. To deploy a separate instance, import `contracts/benchmark_fence.py` and update `web/deployment.json` with the new address.
 - The dashboard supports MetaMask and other EIP-1193 browser wallets, switches/adds Studionet (61999), handles account/network changes, and lets the wallet approve signatures. No MetaMask installation is required for development testing.
 - **Use GenLayer Studio account** selects a public address and prepares exact method/argument calls. Sign in Studio's built-in UI, then paste the transaction hash into the dashboard. Before accepting a matching successful transaction the dashboard verifies its sender, destination, method and exact arguments, then reads finalized contract state and verifies its hash-linked receipts. No signing keys are transferred between origins.
 - Studio's browser storage is origin-isolated; this dashboard cannot silently use Studio's private signer. It never asks you to paste a private key and never creates a different signing account.
@@ -47,22 +52,28 @@ Maximum **14,000 UTF-8 bytes**, **6 training samples**, **3 evaluation items**, 
   "dataset": "Public disclosure snapshot name",
   "benchmark": "Evaluation subset name",
   "source_claim": "Public disclosure reference or explicit synthetic fixture declaration",
-  "samples": [{"id": "train-001", "text": "Disclosed training sample..."}],
-  "evaluations": [{"id": "eval-001", "question": "A sufficiently specific evaluation question?", "answer": "Reference answer"}]
+  "samples": [{ "id": "train-001", "text": "Disclosed training sample..." }],
+  "evaluations": [
+    {
+      "id": "eval-001",
+      "question": "A sufficiently specific evaluation question?",
+      "answer": "Reference answer"
+    }
+  ]
 }
 ```
 
-The client hashes the original JSON text, not a reserialized object. Changing whitespace changes the commitment. The contract verifies the supplied SHA-256 itself. Case ID = `sha256(lowercase_owner + "\n" + evidence_sha256)`.
+The contract hashes the exact transmitted JSON text. Browser-wallet mode commits the original textarea bytes. Studio mode explicitly compacts the parsed JSON into one line, displays those bytes in the textarea, recomputes the hash, and prepares that exact string for Studio. Changing whitespace changes the commitment. The contract verifies the supplied SHA-256 itself. Case ID = `sha256(lowercase_owner + "\n" + evidence_sha256)`.
 
 ## Contract design
 
-| Method | Behavior |
-| --- | --- |
-| `submit(bundle, expected_sha256)` | Validates and locks exact evidence bytes, records submitting owner, returns deterministic case ID, appends the first receipt. Duplicate owner/evidence locks are rejected. |
-| `review(case_id)` | Owner-only review. Deterministic exact matches bypass AI; remaining pairs use independent validator classification. At most 3 successful reviews, with retries allowed only after INCONCLUSIVE. |
-| `get_case(case_id)` | Returns immutable evidence plus append-only receipts, or JSON `null`. |
-| `list_cases(offset, limit)` | Bounded pagination (limit 1–20) over registered case IDs. |
-| `get_info()` | Returns policy version, bounds and case count. |
+| Method                            | Behavior                                                                                                                                                                                        |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `submit(bundle, expected_sha256)` | Validates and locks exact evidence bytes, records submitting owner, returns deterministic case ID, appends the first receipt. Duplicate owner/evidence locks are rejected.                      |
+| `review(case_id)`                 | Owner-only review. Deterministic exact matches bypass AI; remaining pairs use independent validator classification. At most 3 successful reviews, with retries allowed only after INCONCLUSIVE. |
+| `get_case(case_id)`               | Returns immutable evidence plus append-only receipts, or JSON `null`.                                                                                                                           |
+| `list_cases(offset, limit)`       | Bounded pagination (limit 1–20) over registered case IDs.                                                                                                                                       |
+| `get_info()`                      | Returns policy version, bounds and case count.                                                                                                                                                  |
 
 Each non-exact pair is assigned PARAPHRASE, ANSWER_LEAKAGE, NO_OVERLAP or UNCERTAIN. Ordinary shared topics, common knowledge and short answer tokens alone are not enough to establish leakage. Validators independently run the same classification against locked evidence and compare the compact label vector. There is no validator that merely accepts well-formed leader output, no free-form quotation matching, and no global LLM response used as proof. The contract derives its aggregate verdict deterministically.
 

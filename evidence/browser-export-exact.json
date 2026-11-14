@@ -1,0 +1,49 @@
+{
+  "format": "benchmarkfence/1",
+  "chain_id": 61999,
+  "contract": "0xC6a6c2982F23229488D590A87148840469687E79",
+  "contract_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "record": {
+    "attempts": 1,
+    "bundle": "{\"version\":\"benchmarkfence/1\",\"dataset\":\"Synthetic disclosed training excerpt\",\"benchmark\":\"Fence arithmetic mini-benchmark\",\"source_claim\":\"Synthetic reproducible fixture; no claim about any real model or training dataset.\",\"samples\":[{\"id\":\"train-001\",\"text\":\"Practice worksheet: A box contains 12 red marbles and 7 blue marbles. How many marbles are in the box? Answer: 19.\"}],\"evaluations\":[{\"id\":\"eval-001\",\"question\":\"A box contains 12 red marbles and 7 blue marbles. How many marbles are in the box?\",\"answer\":\"19\"}]}",
+    "evidence_sha256": "8e104acdcf8123df6154353e2064475ff53ac7551e9745442391df00242758a1",
+    "id": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b",
+    "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+    "receipts": [
+      {
+        "body": {
+          "case_id": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b",
+          "event": "EVIDENCE_LOCKED",
+          "evidence_sha256": "8e104acdcf8123df6154353e2064475ff53ac7551e9745442391df00242758a1",
+          "owner": "0x67da51fd9ac1d52f34f5d01d06da8548979fc514",
+          "policy": "benchmarkfence/1",
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0
+        },
+        "hash": "320306c9b08e877424427a4d0eeb193aaf5427bf44401923a4c561ab99e073ab"
+      },
+      {
+        "body": {
+          "case_id": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b",
+          "event": "REVIEW_COMPLETED",
+          "evidence_sha256": "8e104acdcf8123df6154353e2064475ff53ac7551e9745442391df00242758a1",
+          "pairs": [
+            {
+              "evaluation_id": "eval-001",
+              "kind": "EXACT_DUPLICATE",
+              "sample_id": "train-001"
+            }
+          ],
+          "policy": "benchmarkfence/1",
+          "previous_hash": "320306c9b08e877424427a4d0eeb193aaf5427bf44401923a4c561ab99e073ab",
+          "scope": "Submitted disclosed samples only; provenance and timing unverified",
+          "semantic_pairs": 0,
+          "sequence": 1,
+          "uncertain_pairs": 0,
+          "verdict": "CONTAMINATION_DETECTED"
+        },
+        "hash": "3c757ff8c215fbe8ca74d9e16caaeb2fafb5317a03b035ef7c76b0e97e41b8bd"
+      }
+    ]
+  }
+}
