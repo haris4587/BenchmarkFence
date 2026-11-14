@@ -1,0 +1,19 @@
+{
+  "version": "benchmarkfence/1",
+  "dataset": "Synthetic paraphrased worksheet",
+  "benchmark": "Fence arithmetic mini-benchmark",
+  "source_claim": "Synthetic paraphrase fixture for live validator review.",
+  "samples": [
+    {
+      "id": "train-para",
+      "text": "Inside a box are seven blue marbles together with twelve red ones. Work out the total number of marbles. The solution is nineteen."
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "eval-001",
+      "question": "A box contains 12 red marbles and 7 blue marbles. How many marbles are in the box?",
+      "answer": "19"
+    }
+  ]
+}

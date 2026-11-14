@@ -1,0 +1,6 @@
+{
+  "deployment_tx": "0x4c2570f26e229a962fd8da92541ab86f7b4dfd9df445ef67b283b8c4de4de87f",
+  "onchain_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "local_source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "exact_match": true
+}

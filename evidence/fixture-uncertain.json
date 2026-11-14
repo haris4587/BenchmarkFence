@@ -1,0 +1,19 @@
+{
+  "version": "benchmarkfence/1",
+  "dataset": "Synthetic incomplete excerpt",
+  "benchmark": "Fence reference mini-benchmark",
+  "source_claim": "Synthetic ambiguity fixture; intentionally omits the referenced document.",
+  "samples": [
+    {
+      "id": "train-gap",
+      "text": "The answer to the question on the missing previous page is the value marked in the red circle. That page and the circle are not included in this excerpt."
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "eval-gap",
+      "question": "What answer is marked in the red circle on the missing previous page?",
+      "answer": "42"
+    }
+  ]
+}

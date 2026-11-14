@@ -1,0 +1,86 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> benchmarkfence@1.0.0 check
+> npm test && npm run test:contract && npm run build
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> benchmarkfence@1.0.0 test
+> node --test tests/*.test.js
+
+✔ valid example: exact (4.220544ms)
+✔ valid example: semantic (0.576989ms)
+✔ valid example: leakage (0.564195ms)
+✔ valid example: unrelated (0.452306ms)
+✔ valid example: uncertain (0.420166ms)
+✔ UTF-8 bytes are hashed exactly (21.187047ms)
+✔ JSON whitespace changes evidence hash (6.263063ms)
+✔ canonical JSON matches Python ensure_ascii (0.722181ms)
+✔ bounds reject oversize UTF8 (1.048341ms)
+✔ reject unknown schema (0.614058ms)
+✔ reject duplicate item IDs (0.308597ms)
+✔ question length bound (0.380111ms)
+✔ PENDING remains pending (0.316893ms)
+✔ PROPOSING remains pending (0.081733ms)
+✔ COMMITTING remains pending (0.068267ms)
+✔ REVEALING remains pending (0.062578ms)
+✔ ACCEPTED remains pending (0.059361ms)
+✔ CANCELED does not become success (0.157485ms)
+✔ UNDETERMINED does not become success (0.070833ms)
+✔ REJECTED does not become success (0.061214ms)
+✔ FINALIZED without execution is unverified (0.135553ms)
+✔ FINALIZED execution error is failure (0.124863ms)
+✔ FINALIZED returned execution is success (0.175197ms)
+✔ consensus disagreement is failure (0.231883ms)
+✔ discard canceled leaders after quorum (0.317363ms)
+✔ conflicting executions remain unverified (0.153898ms)
+✔ select final leader receipt (0.156353ms)
+✔ valid receipt chain (8.873977ms)
+✔ edited evidence rejected (3.323286ms)
+✔ tampered receipt rejected (1.936051ms)
+✔ rebound owner rejected (4.813452ms)
+✔ truncated chain rejected (2.93524ms)
+✔ wallet switches and requests authorized account (2.181811ms)
+✔ wallet adds missing chain (0.53971ms)
+✔ rejected signature does not silently fall back (0.307906ms)
+✔ wrong network fails closed (0.234048ms)
+✔ missing wallet guidance (0.276417ms)
+✔ no signing object is exported to window (0.674151ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 328.969772
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> benchmarkfence@1.0.0 test:contract
+> python -m unittest discover -s tests -p 'test_*.py'
+
+...................................
+----------------------------------------------------------------------
+Ran 35 tests in 0.008s
+
+OK
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> benchmarkfence@1.0.0 build
+> vite build
+
+vite v7.2.2 building client environment for production...
+transforming...
+✓ 464 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                  10.40 kB │ gzip:   3.90 kB
+dist/assets/index-DbUJLTSB.css   13.52 kB │ gzip:   3.88 kB
+dist/assets/ccip-DaLd-ZRj.js      4.40 kB │ gzip:   1.97 kB
+dist/assets/index-UBhP0d-f.js   560.59 kB │ gzip: 125.90 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.51s

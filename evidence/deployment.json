@@ -1,0 +1,44 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "address": "0xC6a6c2982F23229488D590A87148840469687E79",
+  "source_sha256": "fc72ab20b9eecdfb85a1e01cc2f347e8b558f28bc29da71fe55f2f8a0e753ff8",
+  "deployment_tx": "0x4c2570f26e229a962fd8da92541ab86f7b4dfd9df445ef67b283b8c4de4de87f",
+  "deployment_status": {
+    "phase": "FINALIZED",
+    "state": "success",
+    "execution": "SUCCESS"
+  },
+  "studio_builtin_account": true,
+  "checked_at": "2026-11-14T13:53:24.569Z",
+  "example_cases": {
+    "exact": "2e001467dc245f6be7798f74aeb89bc13aece69b6388d4924b29a4f9a6f2709b"
+  },
+  "studio_account": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+  "transactions": {
+    "studio-submit-exact": {
+      "hash": "0x09c6d7e269d12c642aa6570c5ee907abb6fc93eea49e2081834eb741fdde0885",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "submit",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    },
+    "studio-review-exact": {
+      "hash": "0x4b9b906d496422c47e73bb0fa38ce4736a007beddd6c9d25003078e09db6b3f0",
+      "phase": "FINALIZED",
+      "state": "success",
+      "execution": "SUCCESS",
+      "from": "0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514",
+      "to": "0xC6a6c2982F23229488D590A87148840469687E79",
+      "method": "review",
+      "leader_only": false,
+      "initial_validators": 5,
+      "rotations": 0
+    }
+  }
+}
